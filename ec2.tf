@@ -17,7 +17,7 @@ resource "aws_instance" "example" {
 }
 
 output "aws_instance_ip" {
-  count = 0
+
   value = aws_instance.example[0].public_ip
   description = "The public IP address of our instance"
 }
