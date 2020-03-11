@@ -11,7 +11,7 @@ resource "aws_instance" "cloud-practitioner-ec2lab" {
   # vpc_security_group_ids = ["sg-0077..."]
   # subnet_id = "subnet-923a..."
 
-  tags {
+  tags = {
     owner = "terraform"
   }
 
