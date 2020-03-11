@@ -18,6 +18,6 @@ resource "aws_instance" "example" {
 
 output "aws_instance_ip" {
 
-  value = "ssi -i ~/Downloads/ ec2-user@${aws_instance.example[0].public_ip}"
+  value = aws_instance.example[0].public_ip
   description = "The public IP address of our instance"
 }
