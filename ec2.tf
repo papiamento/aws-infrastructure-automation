@@ -2,7 +2,7 @@ provider "aws" {
   region     = "us-east-1"
 }
 
-resource "aws_instance" "cloud-practitioner-ec2lab" {
+resource "aws_instance" "example" {
   count	        = 1
   ami           = "ami-2757f631"
   instance_type = "t2.micro"
@@ -16,4 +16,10 @@ resource "aws_instance" "cloud-practitioner-ec2lab" {
   }
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
+}
+
+
+output "aws_instance_ip" {
+  value = aws_instance.example[0].public_ip
+  description = "The public IP address of our instance"
 }
