@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  count	        = 0
+  count	        = 1
   ami           = "ami-0a887e401f7654935"
   instance_type = "t2.micro"
   
@@ -16,8 +16,8 @@ resource "aws_instance" "example" {
   }
 }
 
-# output "aws_instance_ip" {
-#   count = 0
-#   value = aws_instance.example[0].public_ip
-#   description = "The public IP address of our instance"
-# }
+output "aws_instance_ip" {
+  count = 0
+  value = aws_instance.example[0].public_ip
+  description = "The public IP address of our instance"
+}
