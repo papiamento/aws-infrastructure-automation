@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   count	        = 0
-  ami           = "ami-2757f631"
+  ami           = "ami-0a887e401f7654935"
   instance_type = "t2.micro"
   
   key_name = "ExampKP"
