@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  count	        = 0
+  count	        = 1
   ami           = "ami-2757f631"
   instance_type = "t2.micro"
   
@@ -16,13 +16,4 @@ resource "aws_instance" "example" {
   }
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
-}
-
-resource "security_group" "MyDMV" {
-  
-
-
-  tags {
-    "owner" = "terraform"
-  }
 }
