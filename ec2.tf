@@ -7,17 +7,14 @@ resource "aws_instance" "example" {
   ami           = "ami-2757f631"
   instance_type = "t2.micro"
   
-  key_name = "My Private Key"
-  # vpc_security_group_ids = ["sg-0077..."]
-  # subnet_id = "subnet-923a..."
-
-  tags = {
-    owner = "terraform"
-  }
+  key_name = "ExampKP"
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
-}
 
+ tags = {
+    owner = "terraform"
+  }
+}
 
 output "aws_instance_ip" {
   value = aws_instance.example[0].public_ip
