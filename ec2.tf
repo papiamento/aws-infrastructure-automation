@@ -16,7 +16,7 @@ resource "aws_instance" "example" {
   }
 }
 
-output "aws_instance_ip" {
+output "ssh -i ~/Downloads/ExampKP.pem ec2-user@" {
 
   value = aws_instance.example[0].public_ip
   description = "The public IP address of our instance"
