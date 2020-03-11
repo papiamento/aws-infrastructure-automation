@@ -18,7 +18,7 @@ resource "aws_iam_role" "role" {
 EOF
 }
 
-resource "aws_iam_policy" "s3-admin-policy" {
+resource "aws_iam_policy" "policy" {
   name        = "test-policy"
   description = "A test policy"
 
