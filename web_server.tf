@@ -12,7 +12,7 @@ resource "aws_instance" "webserver1" {
     user_data = "${file("web_server1_install.sh")}"
 
     tags = {
-        name = "webserver1",
+        Name = "webserver1",
         owner = "terraform"
     }
 }
@@ -31,7 +31,7 @@ resource "aws_instance" "webserver2" {
     user_data = "${file("web_server2_install.sh")}"
 
     tags = {
-       name = "webserver2",
+       Name = "webserver2",
        owner = "terraform"
     }
 }
