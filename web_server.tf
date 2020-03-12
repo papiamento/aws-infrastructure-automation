@@ -9,7 +9,7 @@ resource "aws_instance" "webserver1" {
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
 
-    user_data = "${file("install_apache.sh")}"
+    user_data = "${file("web_server_install.sh")}"
 
     tags = {
         owner = "terraform"
