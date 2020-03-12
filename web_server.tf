@@ -9,9 +9,10 @@ resource "aws_instance" "webserver1" {
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
 
-    user_data = "${file("web_server_install.sh")}"
+    user_data = "${file("web_server1_install.sh")}"
 
     tags = {
+        name = "webserver1",
         owner = "terraform"
     }
 }
@@ -27,10 +28,11 @@ resource "aws_instance" "webserver2" {
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
 
-    user_data = "${file("web_server_install.sh")}"
+    user_data = "${file("web_server2_install.sh")}"
 
     tags = {
-        owner = "terraform"
+       name = "webserver2",
+       owner = "terraform"
     }
 }
 
