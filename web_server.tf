@@ -1,5 +1,5 @@
 resource "aws_instance" "webserver1" {
-#  count	        = 1
+  count	        = 0
   ami           = "ami-0a887e401f7654935"
   instance_type = "t2.micro"
   
@@ -18,7 +18,7 @@ resource "aws_instance" "webserver1" {
 }
 
 resource "aws_instance" "webserver2" {
-#  count	        = 1
+  count	        = 0
   ami           = "ami-0a887e401f7654935"
   instance_type = "t2.micro"
   
@@ -36,14 +36,14 @@ resource "aws_instance" "webserver2" {
     }
 }
 
-output "webserver1" {
+# output "webserver1" {
 
-  value = "webserver 1: ${aws_instance.webserver1.public_ip}"
-  description = "The public IP address of our instance"
-}
+#   value = "webserver 1: ${aws_instance.webserver1.public_ip}"
+#   description = "The public IP address of our instance"
+# }
 
-output "webserver2" {
+# output "webserver2" {
 
-  value = "webserver 2: ${aws_instance.webserver2.public_ip}"
-  description = "The public IP address of our instance"
-}
+#   value = "webserver 2: ${aws_instance.webserver2.public_ip}"
+#   description = "The public IP address of our instance"
+# }
