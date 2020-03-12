@@ -7,17 +7,11 @@ resource "aws_instance" "web-server" {
 
   vpc_security_group_ids = ["sg-0d9a3a138f6746c16"]
 
-	user_data = <<EOT
-#! /bin/bash
-sudo yum update -y
-sudo yum install httpd -y
-sudo service httpd start
-echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
-EOT
+    user_data = "${file("install_apache.sh")}"
 
- tags = {
-    owner = "terraform"
-  }
+    tags = {
+        owner = "terraform"
+    }
 }
 
 output "aws_instance_ip" {
